@@ -86,10 +86,10 @@
         layer_3 {
             display-name = "F-Key";
             bindings = <
-&kp BACKSPACE  &kp F6     &kp F7     &kp F8     &kp F9         &kp F10    &kp F11  &kp F12  &trans              &trans  &trans  &trans
-&trans         &kp F1     &kp F2     &kp F3     &kp F4         &kp F5     &trans   &trans   &trans              &trans  &trans  &trans
-&kp DELETE     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &trans     &trans   &trans   &trans              &trans  &trans  &trans
-                                     &trans     &kp LS(LG(S))  &trans     &trans   &trans   &kp LC(LA(DELETE))
+&kp BACKSPACE  &kp F6     &kp F7     &kp F8     &kp F9         &kp F10    &kp F11  &kp F12         &kp UP_ARROW        &trans     &trans  &trans
+&trans         &kp F1     &kp F2     &kp F3     &kp F4         &kp F5     &trans   &kp LEFT_ARROW  &kp DOWN_ARROW      &kp RIGHT  &trans  &trans
+&kp DELETE     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &trans     &trans   &trans          &trans              &trans     &trans  &trans
+                                     &trans     &kp LS(LG(S))  &trans     &trans   &trans          &kp LC(LA(DELETE))
             >;
         };
 
