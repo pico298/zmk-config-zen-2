@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -31,10 +32,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-
-
         default_layer {
-            display-name = "QWERTY";
+            display-name = "COLEMAK";
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
@@ -43,15 +42,15 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&td0       &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
+&kp TAB           &kp Q  &kp W  &kp F           &kp P  &kp G          &kp J        &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BSPC
+&mt LCTRL ESCAPE  &kp A  &kp R  &kp S           &kp T  &kp D          &kp H        &kp N  &kp E      &kp I    &kp O          &kp SQT
+&td0              &kp Z  &kp X  &kp C           &kp V  &kp B          &kp K        &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
+                                &lt 3 LEFT_GUI  &mo 2  &lt 1 SPACE    &lt 4 ENTER  &mo 5  &kp RALT
             >;
         };
 
-        lower_layer {
-            display-name = "NUMBER";
+        layer_1 {
+            display-name = "MIRROR";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -60,14 +59,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5             &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans             &kp INS          &kp DEL          &trans
+&kp BACKSPACE    &kp SEMI   &kp Y       &kp U      &kp L   &kp J     &kp KP_NUMLOCK  &kp KP_N7        &kp KP_N8   &kp KP_N9  &kp KP_DIVIDE  &kp KP_MULTIPLY
+&kp APOS         &kp O      &kp I       &kp E      &kp N   &kp H     &none           &kp KP_NUMBER_4  &kp KP_N5   &kp KP_N6  &kp KP_ENTER   &kp KP_MINUS
+&mt RSHFT ENTER  &kp SLASH  &kp PERIOD  &kp COMMA  &kp M   &kp K     &none           &kp KP_N1        &kp KP_N2   &kp KP_N3  &kp KP_ENTER   &kp KP_PLUS
+                                        &trans     &trans  &trans    &trans          &kp KP_NUMBER_0  &kp KP_DOT
             >;
         };
 
-        raise_layer {
+        layer_2 {
             display-name = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
@@ -77,20 +76,40 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &none         &none         &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans    &trans    &kp SPACE    &kp RET    &trans     &trans
+&kp BACKSPACE          &kp NUMBER_6  &kp N7        &kp N8         &kp N9        &kp N0     &kp CARET  &kp AMPS   &kp ASTRK        &kp LPAR          &kp RPAR           &kp BSPC
+&kp CAPS               &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp N5     &kp GRAVE  &kp MINUS  &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&mt RIGHT_SHIFT ENTER  &kp PLUS      &kp MINUS     &kp ASTRK      &kp SLASH     &kp DOT    &kp TILDE  &kp UNDER  &kp PLUS         &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE
+                                                   &kp LS(LG(S))  &trans        &trans     &trans     &trans     &kp LC(LA(DEL))
             >;
         };
 
         layer_3 {
-            display-name = "Fn";
+            display-name = "F-Key";
             bindings = <
-&trans  &kp F1      &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
-&trans  &bt BT_CLR  &trans  &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
-&trans  &trans      &trans  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                            &trans  &trans      &trans         &trans       &trans  &trans
+&kp BACKSPACE  &kp F6  &kp F7  &kp F8  &kp F9         &kp F10    &kp F11   &kp F12       &trans              &trans     &trans  &trans
+&kp CAPS       &kp F1  &kp F2  &kp F3  &kp F4         &kp F5     &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW      &kp RIGHT  &trans  &trans
+&kp DELETE     &trans  &trans  &trans  &trans         &trans     &trans    &trans        &trans              &trans     &trans  &trans
+                               &trans  &kp LS(LG(S))  &trans     &trans    &trans        &kp LC(LA(DELETE))
+            >;
+        };
+
+        layer_4 {
+            display-name = "SYMBOL";
+            bindings = <
+&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET       &kp AMPS      &kp ASTRK  &kp LPAR   &kp RPAR  &kp BSPC
+&trans  &none         &none         &none     &none     &none        &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN   &kp RIGHT  &trans    &trans
+&trans  &out OUT_USB  &out OUT_BLE  &none     &none     &none        &trans          &trans        &trans     &trans     &trans    &trans
+                                    &trans    &trans    &trans       &trans          &trans        &trans
+            >;
+        };
+
+        layer_5 {
+            display-name = "FUNCTION";
+            bindings = <
+&trans  &kp N1           &kp N2          &kp N3             &kp N4            &kp N5             &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
+&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
+&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &ext_power EP_OFF  &ext_power EP_ON  &rgb_ug RGB_EFF    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
+                                         &trans             &trans            &trans             &trans           &trans           &trans
             >;
         };
     };
