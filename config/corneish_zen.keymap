@@ -86,10 +86,10 @@
         layer_3 {
             display-name = "F-Key";
             bindings = <
-&kp BACKSPACE  &kp F6  &kp F7  &kp F8  &kp F9         &kp F10    &kp F11   &kp F12       &trans              &trans     &trans  &trans
-&kp CAPS       &kp F1  &kp F2  &kp F3  &kp F4         &kp F5     &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW      &kp RIGHT  &trans  &trans
-&kp DELETE     &trans  &trans  &trans  &trans         &trans     &trans    &trans        &trans              &trans     &trans  &trans
-                               &trans  &kp LS(LG(S))  &trans     &trans    &trans        &kp LC(LA(DELETE))
+&kp BACKSPACE  &kp F6  &kp F7  &kp F8  &kp F9         &kp F10    &kp F11         &kp F12       &trans              &trans           &trans  &trans
+&kp CAPS       &kp F1  &kp F2  &kp F3  &kp F4         &kp F5     &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW      &kp RIGHT_ARROW  &trans  &trans
+&kp DELETE     &trans  &trans  &trans  &trans         &trans     &trans          &trans        &trans              &trans           &trans  &trans
+                               &trans  &kp LS(LG(S))  &trans     &trans          &trans        &kp LC(LA(DELETE))
             >;
         };
 
@@ -107,7 +107,7 @@
             display-name = "FUNCTION";
             bindings = <
 &trans  &kp N1           &kp N2          &kp N3             &kp N4            &kp N5             &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW     &kp RIGHT_ARROW  &kp HOME  &kp PG_UP
+&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &kp LEFT_ARROW   &kp UP_ARROW     &kp DOWN_ARROW   &kp RIGHT_ARROW  &kp HOME  &kp PG_UP
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &ext_power EP_OFF  &ext_power EP_ON  &rgb_ug RGB_EFF    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
                                          &trans             &trans            &trans             &trans           &trans           &trans
             >;
