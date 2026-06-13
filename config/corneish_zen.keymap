@@ -86,20 +86,20 @@
         layer_3 {
             display-name = "F-Key";
             bindings = <
-&kp BACKSPACE  &kp F6  &kp F7  &kp F8  &kp F9         &kp F10    &kp F11         &kp F12       &trans              &trans           &trans  &trans
-&kp CAPS       &kp F1  &kp F2  &kp F3  &kp F4         &kp F5     &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW      &kp RIGHT_ARROW  &trans  &trans
-&kp DELETE     &trans  &trans  &trans  &trans         &trans     &trans          &trans        &trans              &trans           &trans  &trans
-                               &trans  &kp LS(LG(S))  &trans     &trans          &trans        &kp LC(LA(DELETE))
+&kp BACKSPACE  &kp F6  &kp F7  &kp F8  &kp F9         &kp F10    &kp F11         &kp F12         &trans              &trans           &trans  &trans
+&kp CAPS       &kp F1  &kp F2  &kp F3  &kp F4         &kp F5     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW  &trans  &trans
+&kp ENTER      &trans  &trans  &trans  &trans         &trans     &trans          &trans          &trans              &trans           &trans  &trans
+                               &trans  &kp LS(LG(S))  &trans     &trans          &trans          &kp LC(LA(DELETE))
             >;
         };
 
         layer_4 {
             display-name = "SYMBOL";
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET       &kp AMPS      &kp ASTRK  &kp LPAR         &kp RPAR  &kp BSPC
-&trans  &none         &none         &none     &none     &none        &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN   &kp RIGHT_ARROW  &trans    &trans
-&trans  &out OUT_USB  &out OUT_BLE  &none     &none     &none        &trans          &trans        &trans     &trans           &trans    &trans
-                                    &trans    &trans    &trans       &trans          &trans        &to 6
+&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET       &kp AMPS        &kp ASTRK     &kp LPAR         &kp RPAR  &kp BSPC
+&trans  &none         &none         &none     &none     &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans    &trans
+&trans  &out OUT_USB  &out OUT_BLE  &none     &none     &none        &trans          &trans          &trans        &trans           &trans    &trans
+                                    &trans    &trans    &trans       &trans          &trans          &to 6
             >;
         };
 
@@ -125,5 +125,3 @@
         };
     };
 };
-
-
